@@ -4949,7 +4949,7 @@ var nerdamer = (function(imports) {
          */
         this.pretty_print = function(o) {
             if(Array.isArray(o)) {
-                var s = o.map(x=>_.pretty_print(x)).join(', ');
+                var s = o.map(function(x) { return _.pretty_print(x) }).join(', ');
                 if(o.type === 'vector')
                     return 'vector<'+s+'>';
                 return '('+s+')';
